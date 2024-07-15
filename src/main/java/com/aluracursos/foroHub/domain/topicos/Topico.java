@@ -47,4 +47,8 @@ public class Topico {
         this.fecha = LocalDateTime.now();
         this.status = true;
     }
+
+    public void desactivarTopico() {
+        this.status = false;
+    }
 }

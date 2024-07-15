@@ -60,6 +60,13 @@ public class TopicoController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity eliminarTopico(@PathVariable Long id) {
+        Topico topico = topicoRepository.getReferenceById(id);
+        topico.desactivarTopico();
+        return ResponseEntity.noContent().build();
+    }
 
 
 }
