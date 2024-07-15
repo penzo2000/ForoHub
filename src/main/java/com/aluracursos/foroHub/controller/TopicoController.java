@@ -41,7 +41,7 @@ public class TopicoController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DatosListadoTopicos>> listadoTopicos(@PageableDefault(size = 10, sort = "fecha", direction = Sort.Direction.ASC) Pageable paginacion) {
+    public ResponseEntity<Page<DatosListadoTopicos>> listarTopicos(@PageableDefault(size = 10, sort = "fecha", direction = Sort.Direction.ASC) Pageable paginacion) {
         return ResponseEntity.ok(topicoRepository.findByStatusTrue(paginacion).map(DatosListadoTopicos::new));
     }
 
@@ -51,6 +51,13 @@ public class TopicoController {
         Topico topico = topicoRepository.getReferenceById(id);
         topico.actualizarDatos(datosActualizarTopico);
         return ResponseEntity.ok(new DatosRespuestaTopico(topico));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DatosRespuestaTopico> detallarUnTopico(@PathVariable Long id) {
+        return topicoRepository.findById(id)
+                .map(topico -> ResponseEntity.ok(new DatosRespuestaTopico(topico)))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
 

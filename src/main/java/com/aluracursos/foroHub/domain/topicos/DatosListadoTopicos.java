@@ -13,7 +13,11 @@ public record DatosListadoTopicos(
 
 ) {
     public DatosListadoTopicos(Topico topico) {
-        this(topico.getTitulo(), topico.getMensaje(), topico.getFecha(),
-                topico.getStatus() ? "Activo" : "Este tópico ya no está activo", topico.getUsuario().getUsername(), topico.getCurso());
+        this(
+                topico.getTitulo(),
+                topico.getMensaje(),
+                topico.getFecha(),
+                topico.getStatus() ? "Activo" : "Este tópico ya no está activo",
+                topico.getUsuario().getUsername(), topico.getCurso());
     }
 }

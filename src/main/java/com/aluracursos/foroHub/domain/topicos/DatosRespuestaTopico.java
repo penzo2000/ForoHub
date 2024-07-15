@@ -8,7 +8,7 @@ public record DatosRespuestaTopico(
         Long id,
         String titulo,
         String mensaje,
-        Boolean status,
+        String status,
         Long id_usuario,
         String curso,
         LocalDateTime fecha
@@ -18,7 +18,7 @@ public record DatosRespuestaTopico(
         this(topico.getId(),
                 topico.getTitulo(),
                 topico.getMensaje(),
-                topico.getStatus(),
+                topico.getStatus() ? "Activo" : "Este tópico ya no está activo",
                 topico.getUsuario().getId(),
                 topico.getCurso(),
                 topico.getFecha());
