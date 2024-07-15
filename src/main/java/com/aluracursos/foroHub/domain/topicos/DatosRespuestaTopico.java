@@ -9,9 +9,18 @@ public record DatosRespuestaTopico(
         String titulo,
         String mensaje,
         Boolean status,
-        Long idUsuario,
+        Long id_usuario,
         String curso,
         LocalDateTime fecha
 ) {
 
+    public DatosRespuestaTopico(Topico topico) {
+        this(topico.getId(),
+                topico.getTitulo(),
+                topico.getMensaje(),
+                topico.getStatus(),
+                topico.getUsuario().getId(),
+                topico.getCurso(),
+                topico.getFecha());
+    }
 }

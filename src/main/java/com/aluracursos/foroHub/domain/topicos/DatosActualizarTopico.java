@@ -2,16 +2,10 @@ package com.aluracursos.foroHub.domain.topicos;
 
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDateTime;
-
-public record DatosRegistraTopico(
-        @NotNull
+public record DatosActualizarTopico(
         String titulo,
-        @NotNull
         String mensaje,
-        @NotNull
         Long id_usuario,
-        @NotNull
         String curso
 ) {
 }

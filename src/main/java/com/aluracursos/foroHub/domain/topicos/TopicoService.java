@@ -16,7 +16,7 @@ public class TopicoService {
 
     public Topico crearTopico(DatosRegistraTopico datosRegistroTopico) {
         // Buscar el usuario por ID
-        Usuario usuario = usuarioRepository.findById(datosRegistroTopico.idUsuario())
+        Usuario usuario = usuarioRepository.findById(datosRegistroTopico.id_usuario())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         // Crear una instancia de Topico y asignar el usuario
