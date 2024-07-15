@@ -24,7 +24,7 @@ public class TratamientoDeErrores {
 
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public ResponseEntity<String> tratarError403(SQLIntegrityConstraintViolationException e){
-        if(e.getMessage().equals("Duplicate entry 'HolaPrueba' for key 'topics.titulo'")){
+        if(e.getMessage().contains("topics.titulo")){
             String mensaje = "El título  ya se encuentra en la base de datos, no puedes repetirlo";
             return ResponseEntity.badRequest().body(mensaje);
         }
