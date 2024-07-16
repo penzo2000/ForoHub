@@ -1,4 +1,7 @@
 <h1>Foro Hub</h1>
+
+![Badge-Spring](https://github.com/user-attachments/assets/8869e697-ad8c-4885-89c0-c4be08b7cf91)
+
 <h2>Descripción del proyecto</h2>
 <p>Este es un desafío propuesto por AluraLatam, el cual consiste en crear una API REST usando Spring.</p>
 <p>La API se centrará específicamente en los tópicos de un foro, y debe permitir a los usuarios:</p>
